@@ -1,0 +1,38 @@
+/*
+ * Navbar stylesheet
+ */
+
+.navbar-container {
+  display: flex;
+  padding: 30px 45px 20px;
+  height: fit-content;
+  justify-content: space-between;
+  align-items: center;
+
+  .navbar-start {
+    display: flex;
+    align-items: center;
+
+    .navbar-brand {
+      display: flex;
+      margin-right: 10px;
+    }
+
+    .navbar-menu {
+      display: flex;
+
+      .navbar-item {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .navbar-end {
+    display: flex;
+  }
+
+  .navbar-item {
+    font-weight: 700;
+    text-decoration: none;
+  }
+}

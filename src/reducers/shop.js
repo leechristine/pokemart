@@ -23,7 +23,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
           item.id === action.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
-          )
+        )
         : [...state.cart, { ...item, quantity: 1 }],
       };
     case shopVars.REMOVE_FROM_CART:
@@ -41,13 +41,20 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         ),
       };
     case shopVars.SUB_QUANTITY:
+      // check if cart has exactly one of item
+      const hasOne = state.cart.find(item =>
+        item.id === action.id && item.quantity === 1 ? true : false
+      );
+      // if exactly one of item in cart, remove item; else, decrease item quantity by one
       return {
         ...state,
-        cart: state.cart.map((item) =>
-          item.id === action.id && item.id > 0
+        cart: hasOne
+        ? state.cart.filter((item) => item.id !== action.id)
+        : state.cart.map((item) =>
+          item.id === action.id
             ? { ...item, quantity: item.quantity - 1 }
             : item
-        ),
+        )
       };
     case shopVars.EMPTY_CART:
       return {

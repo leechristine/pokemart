@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { removeFromCart } from 'actions/shop';
 import './CartItemCard.scss';
 
-function CartItemCard({ productData }) {
+function CartItemCard({ productData, removeFromCart }) {
   return (
     <div className="product-card">
       <div className="product-image">
@@ -15,10 +16,16 @@ function CartItemCard({ productData }) {
         <div className="product-price">¥{ productData.price }</div>
       </div>
       <div className="product-actions">
-        <button>remove from cart</button>
+        <button onClick={() => removeFromCart(productData.id)}>remove from cart</button>
       </div>
     </div>
   );
 }
 
-export default CartItemCard;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    removeFromCart: (id) => dispatch(removeFromCart(id))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(CartItemCard);

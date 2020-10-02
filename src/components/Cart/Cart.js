@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { CartItems } from 'components';
+import { CartItems, Checkout } from 'components';
 import './Cart.scss';
 
 function Cart() {
   return (
     <div className="cart-container">
       <CartItems />
+      <Checkout />
     </div>
   );
 }

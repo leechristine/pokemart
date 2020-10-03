@@ -18,15 +18,15 @@
   color: #1c1c1c;
   z-index: 1;
   
-  .empty-cart-action {
-    margin-top: 20px;
+  .to-shop-action {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-self: center;
 
     .action-dialogue {
       margin-bottom: 25px;
-      font-size: 12.5pt;
+      font-size: 12pt;
     }
 
     .action-link {
@@ -47,6 +47,18 @@
         font-weight: 700;
         color: #59C1AB;
       }
+    }
+  }
+
+  .empty-cart-action {
+    display: flex;
+    align-self: center;
+    font-size: 11pt;
+    text-decoration: underline;
+    margin-top: 10px;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 

@@ -1,0 +1,17 @@
+/*
+ * Products (list) stylesheet
+ */
+
+ .products-container {
+  display: flex;
+  padding: 17px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 50px solid #fff;
+  border-radius: 5px;
+
+  .product-container {
+    display: flex;
+    margin: 13px 17px;
+  }
+}

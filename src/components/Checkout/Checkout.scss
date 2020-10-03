@@ -1,3 +1,49 @@
-.checkout-subtotal, .checkout-total {
+/*
+ * Checkout stylesheet
+ */
+
+.checkout-container {
+  margin: 0 20px 40px;
   display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  height: min-content;
+  width: 300px;
+  padding: 25px 25px 30px;
+  background: linear-gradient(to right, #D8384A, #E17C84);
+  border: 2px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 0 5px #E17C84;
+  color: #fff;
+  z-index: 1;
+
+  .checkout-title {
+    font-size: 12pt;
+    margin-bottom: 17px;
+  }
+
+  .checkout-summary {
+    font-size: 10pt;
+    font-weight: 400;
+
+    .checkout-subtotal {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .separator {
+    display: flex;
+    align-self: center;
+    width: 100%;
+    margin: 15px 0;
+    height: 2px;
+    background-color: #fff;
+  }
+
+  .checkout-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.5pt;
+  }
 }

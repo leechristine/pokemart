@@ -28,13 +28,16 @@ function Checkout({ cart }) {
           <div className="amount">¥{ cartSubtotal }</div>
         </div>
       </div>
+      <div className="separator"></div>
       <div className="checkout-total">
         <div className="label">Total</div>
         <div className="amount">¥{ cartTotal }</div>
       </div>
+      {/*
       <div className="checkout-actions">
         <button>checkout</button>
       </div>
+      */}
     </div>
   );
 }

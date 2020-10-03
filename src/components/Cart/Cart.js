@@ -6,8 +6,8 @@ import './Cart.scss';
 function Cart() {
   return (
     <div className="cart-container">
-      <CartItems />
       <Checkout />
+      <CartItems />
     </div>
   );
 }

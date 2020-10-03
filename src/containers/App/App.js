@@ -3,6 +3,7 @@ import { Router, Route, Switch, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { Navbar, Shop, Cart } from 'components';
+import pokeball from 'images/pokeball.svg';
 import history from 'config/history';
 import './App.scss';
 
@@ -21,6 +22,9 @@ function App({ cart }) {
   return (
     <Router history={ history }>
       <div className="app">
+        <div className="app-bgr-image">
+          <img src={ pokeball } />
+        </div>
         {/* Navigation bar */}
         <Navbar
           brand={

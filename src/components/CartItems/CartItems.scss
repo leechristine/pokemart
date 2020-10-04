@@ -39,13 +39,23 @@
       .action-link-icon {
         margin-bottom: 10px;
         font-size: 50pt;
-        color: #59C1AB;
+        color: #59c1ab;
       }
 
       .action-link-text {
         font-size: 10pt;
         font-weight: 700;
-        color: #59C1AB;
+        color: #59c1ab;
+      }
+
+      &:hover {
+        .action-link-icon {
+          opacity: 0.8;
+        }
+  
+        .action-link-text {
+          opacity: 0.8;
+        }
       }
     }
   }

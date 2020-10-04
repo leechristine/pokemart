@@ -9,7 +9,6 @@
   flex-direction: column;
   padding: 0 20px;
   background-color: #f8fcfb;
-  z-index: 1;
 
   .app-bgr-image {
     position: fixed;
@@ -17,5 +16,6 @@
     bottom: -240px;
     width: 750px;
     opacity: 0.3;
+    z-index: 0;
   }
 }

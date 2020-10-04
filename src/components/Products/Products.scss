@@ -7,11 +7,13 @@
   padding: 17px 0;
   flex-wrap: wrap;
   justify-content: center;
-  border: 50px solid #fff;
+  border: 50px solid rgba(255, 255, 255, 0.55);
   border-radius: 5px;
+  z-index: 1;
 
   .product-container {
     display: flex;
     margin: 13px 17px;
+    z-index: 1;
   }
 }

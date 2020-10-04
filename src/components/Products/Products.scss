@@ -4,12 +4,43 @@
 
  .products-container {
   display: flex;
-  padding: 17px 0;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   border: 50px solid rgba(255, 255, 255, 0.55);
   border-radius: 5px;
+  color: #1c1c1c;
   z-index: 1;
+
+  .products-navbar {
+    display: flex;
+    padding: 0 55px;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .products-category {
+      font-size: 11.5pt;
+    }
+
+    .products-total {
+      display: flex;
+      align-items: flex-end;
+
+      .products-total-amount {
+        font-size: 12pt;
+        font-weight: 500;
+      }
+
+      .products-total-label {
+        font-size: 9.5pt;
+      }
+    }
+  }
+
+  .products {
+    display: flex;
+    padding: 17px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
   .product-container {
     display: flex;

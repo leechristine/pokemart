@@ -1,0 +1,36 @@
+.coupons-container {
+  display: flex;
+  flex-direction: column;
+
+  .coupons-header {
+    display: flex;
+    align-items: center;
+    font-size: 13pt;
+    font-weight: 700;
+    margin-bottom: 21px;
+
+    .hide-coupons {
+      margin-right: 8px;
+      cursor: pointer;
+    }
+  }
+
+  .coupons {
+    display: flex;
+    flex-direction: column;
+
+    .coupon-container {
+      display: flex;
+      flex-direction: column;
+      font-size: 10.5pt;
+
+      .coupon-code {
+        font-weight: 600;
+      }
+
+      .coupon-description {
+        margin-left: 1px;
+      }
+    }
+  }
+}

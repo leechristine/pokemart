@@ -6,3 +6,4 @@ export { default as CartItems } from './CartItems/CartItems';
 export { default as ShopProductCard } from './Card/ShopProductCard';
 export { default as CartItemCard } from './Card/CartItemCard';
 export { default as Checkout } from './Checkout/Checkout';
+export { default as Coupons } from './Coupons/Coupons';

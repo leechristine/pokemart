@@ -1,16 +1,16 @@
 const image_url = ( name ) => `https://img.pokemondb.net/sprites/items/${name}.png`;
 
-/* product skeleton:
-    {
-      id: 0,
-      title: "",
-      description:
-        "",
-      price: 0,
-      image: image_url(''),
-    },
-*/
 const db = {
+  /* product skeleton:
+      {
+        id: 0,
+        title: "",
+        description:
+          "",
+        price: 0,
+        image: image_url(''),
+      },
+  */
   products: [
     {
       id: 1,
@@ -779,6 +779,45 @@ const db = {
         "Increases power of Fairy-type moves. Changes Arceus' type to Fairy.",
       price: 10000,
       image: image_url('pixie-plate'),
+    },
+  ],
+  /* coupons skeleton:
+    {
+      code: "",
+      description:
+        "",
+      condition: 0,
+      amount: 1,
+    },
+  */
+  coupons: [
+    {
+      code: "P0KEM0N",
+      description:
+        "5% off your order",
+      condition: 0,
+      amount: 0.95,
+    },
+    {
+      code: "TRA1NER",
+      description:
+        "10% off your order of ¥50000+",
+      condition: 50000,
+      amount: 0.9,
+    },
+    {
+      code: "GYMLEADER",
+      description:
+        "20% off your order of ¥100000+",
+      condition: 100000,
+      amount: 0.8,
+    },
+    {
+      code: "CHAMP10N",
+      description:
+        "35% off your order of ¥200000+",
+      condition: 200000,
+      amount: 0.65,
     },
   ]
 };

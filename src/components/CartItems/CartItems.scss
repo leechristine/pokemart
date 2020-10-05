@@ -2,7 +2,10 @@
  * Cart items (list) stylesheet
  */
 
- .cart-items-container {
+// import global styles
+@import 'styles.scss';
+
+.cart-items-container {
   margin: 0 20px;
   display: flex;
   flex-direction: column;
@@ -11,11 +14,11 @@
   width: 700px;
   min-height: 480px;
   padding: 15px 25px 30px;
-  background-color: #e5f5f1;
-  border: 2px solid #59C1AB;
+  background-color: $bgr_prim;
+  border: 2px solid $bdr_prim;
   border-radius: 5px;
-  box-shadow: 0 0 0 5px #e5f5f1;
-  color: #1c1c1c;
+  box-shadow: 0 0 0 5px $bgr_prim;
+  color: $txt_prim;
   z-index: 1;
   
   .to-shop-action {
@@ -39,13 +42,13 @@
       .action-link-icon {
         margin-bottom: 10px;
         font-size: 50pt;
-        color: #59c1ab;
+        color: $acc_prim;
       }
 
       .action-link-text {
         font-size: 10pt;
         font-weight: 700;
-        color: #59c1ab;
+        color: $acc_prim;
       }
 
       &:hover {
@@ -75,6 +78,6 @@
   .product-container {
     width: 100%;
     margin-bottom: 15px;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid $bdr_sec;
   }
 }

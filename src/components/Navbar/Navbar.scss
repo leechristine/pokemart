@@ -2,6 +2,9 @@
  * Navbar stylesheet
  */
 
+// import global styles
+@import 'styles.scss';
+
 .navbar-container {
   display: flex;
   padding: 30px 45px 20px;
@@ -34,16 +37,16 @@
   .navbar-item {
     display: flex;
     font-weight: 700;
-    color: #59C1AB;
+    color: $acc_prim;
     text-decoration: none;
 
     &:hover {
       .navbar-item-icon {
-        color: #D8384A;
+        color: $red;
       }
 
       .navbar-item-text {
-        background: -webkit-linear-gradient(left, #D8384A, #E17C84);
+        background: $bgr_sec;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }

@@ -2,12 +2,15 @@
  * Products (list) stylesheet
  */
 
- .products-container {
+// import global styles
+@import 'styles.scss';
+
+.products-container {
   display: flex;
   flex-direction: column;
   border: 50px solid rgba(255, 255, 255, 0.55);
   border-radius: 5px;
-  color: #1c1c1c;
+  color: $txt_prim;
   z-index: 1;
 
   .products-navbar {

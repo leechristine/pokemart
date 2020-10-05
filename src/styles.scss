@@ -1,3 +1,22 @@
 /*
  * Global stylesheet
  */
+
+// color values
+$white: #ffffff;
+$dark-grey: #383838;
+$black: #1c1c1c;
+$light-aqua: #e5f5f1;
+$aqua: #59C1AB;
+$red: #D8384A;
+$pink: #E17C84;
+
+// variables
+$bgr_prim: $light-aqua;
+$bdr_prim: $aqua;
+$txt_prim: $black;
+$acc_prim: $aqua;
+$bgr_sec: linear-gradient(to right, $red, $pink);
+$bdr_sec: $white;
+$txt_sec: $white;
+$acc_sec: $pink;

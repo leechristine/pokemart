@@ -2,35 +2,37 @@
  * Product card in Shop stylesheet
  */
 
- .shop-product-card {
+// import global styles
+@import 'styles.scss';
+
+.shop-product-card {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   width: 250px;
   padding: 5px;
-  background-color: #e5f5f1;
-  border: 2px solid #59C1AB;
+  background-color: $bgr_prim;
+  border: 2px solid $bdr_prim;
   border-radius: 5px;
-  box-shadow: 0 0 0 5px #e5f5f1;
-  color: #1c1c1c;
+  box-shadow: 0 0 0 5px $bgr_prim;
+  color: $txt_prim;
 
   &:hover {
-    background: linear-gradient(to right, #D8384A, #E17C84);
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 5px #E17C84;
-    color: #fff;
+    background: $bgr_sec;
+    border: 2px solid $bdr_sec;
+    box-shadow: 0 0 0 5px $acc_sec;
+    color: $txt_sec;
     cursor: pointer;
 
     .separator {
-      background-color: #E17C84;
+      background-color: $acc_sec;
     }
 
     .product-actions {
       .add-to-cart {
         visibility: visible;
-        color: #fff;
-        opacity: 0.5;
+        color: rgba(255, 255, 255, 0.5);
       }
     }
   }
@@ -70,7 +72,7 @@
       display: flex;
       visibility: hidden;
       font-size: 14pt;
-      color: #59C1AB;
+      color: $acc_prim;
     }
   }
 
@@ -80,7 +82,7 @@
     width: 96%;
     margin: 5px 0;
     height: 2px;
-    background-color: #fff;
+    background-color: $bdr_prim;
   }
 
   .product-card-bot {

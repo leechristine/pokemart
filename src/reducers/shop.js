@@ -74,7 +74,7 @@ const shopReducer = (state = INITIAL_STATE, action) => {
         ...state,
         coupon: isCoupon
         ? [{ ...validCoupon[0], isValid: true }]
-        : [{ code: action.code, description: "", condition: 0, amount: 1, isValid: false }],
+        : [{ code: action.code, description: "", condition: 0, amount: 0, isValid: false }],
         /*
         ...state,
         coupon: state.coupons.map((item) =>

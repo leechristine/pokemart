@@ -796,28 +796,28 @@ const db = {
       description:
         "5% off your order",
       condition: 0,
-      amount: 0.95,
+      amount: 0.05,
     },
     {
       code: "TRA1NER",
       description:
         "10% off your order of ¥50000+",
       condition: 50000,
-      amount: 0.9,
+      amount: 0.1,
     },
     {
       code: "GYMLEADER",
       description:
         "20% off your order of ¥100000+",
       condition: 100000,
-      amount: 0.8,
+      amount: 0.2,
     },
     {
       code: "CHAMP10N",
       description:
         "35% off your order of ¥200000+",
       condition: 200000,
-      amount: 0.65,
+      amount: 0.35,
     },
   ]
 };

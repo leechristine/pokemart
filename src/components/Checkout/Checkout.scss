@@ -17,6 +17,68 @@
   color: #fff;
   z-index: 1;
 
+  .checkout-header {
+    font-size: 13pt;
+    font-weight: 700;
+    margin-bottom: 21px;
+  }
+
+  .coupon-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 21px;
+
+    .coupon-title {
+      margin-bottom: 10px;
+    }
+
+    .coupon-input-container {
+      display: flex;
+      align-items: center;
+
+      .coupon-input {
+        width: 100%;
+        height: 20px;
+        padding: 3px;
+        background-color: #fff7f7;
+        border: 2px solid #E17C84;
+        border-radius: 5px;
+        font-size: 10pt;
+        font-weight: 500;
+        color: #383838;
+        margin-right: 8px;
+        outline: none;
+      }
+
+      .apply-coupon {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .coupon-info {
+      display: flex;
+      padding: 5px 0 2px 3px;
+      flex-direction: column;
+
+      .coupon-applied {
+        display: flex;
+        font-size: 10.5pt;
+
+        .coupon-code {
+          font-weight: 600;
+        }
+      }
+
+      .remove-coupon {
+        font-size: 9.5pt;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
   .checkout-title {
     font-size: 12pt;
     margin-bottom: 17px;
@@ -26,9 +88,10 @@
     font-size: 10pt;
     font-weight: 400;
 
-    .checkout-subtotal {
+    .checkout-subtotal, .checkout-discount {
       display: flex;
       justify-content: space-between;
+      margin: 1px 0;
     }
   }
 

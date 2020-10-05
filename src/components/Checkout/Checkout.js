@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
-
 import { connect } from 'react-redux';
+
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { applyCoupon, removeCoupon } from 'actions/shop';
 import './Checkout.scss';
 
-function Checkout({ cart }) {
+function Checkout({ cart, coupon, applyCoupon, removeCoupon }) {
   const [cartSubtotal, setCartSubtotal] = useState(0);
+  const [cartDiscount, setCartDiscount] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
 
   useEffect(() => {
@@ -12,20 +17,67 @@ function Checkout({ cart }) {
     cart.forEach((item) => {
       subtotal += item.quantity * item.price;
     });
-
     setCartSubtotal(subtotal);
+    console.log(subtotal)
 
-    let total = subtotal;
+    let discount = 0;
+    if (coupon.length != 0 && subtotal >= coupon[0].condition) {
+      cart.forEach((item) => {
+        discount += (item.quantity * item.price * coupon[0].amount);
+      });
+    }
+    setCartDiscount(discount);
+
+    let total = subtotal - discount;
     setCartTotal(total);
-  }, [cart, cartTotal, cartSubtotal]);
+  }, [cart, coupon, cartTotal, cartDiscount, cartSubtotal]);
+
+  let couponInput = React.createRef();
+
+  function handleApplyCoupon(){
+    if (couponInput.current.value != "") {
+      applyCoupon(couponInput.current.value);
+      couponInput.current.value = "";
+    }
+  } 
 
   return (
     <div className="checkout-container">
+      <div className="checkout-header">Checkout</div>
+      <div className="coupon-container">
+        <div className="coupon-title">Coupon</div>
+        {(coupon.length == 0 || !coupon[0].isValid) &&
+        <div className="coupon-input-container">
+          <input className="coupon-input" ref={ couponInput } placeholder="" />
+          <div className="apply-coupon" onClick={() => handleApplyCoupon()}>
+            <FontAwesomeIcon icon={ faPlusCircle } />
+          </div>
+        </div>
+        }
+        {coupon.length != 0 &&
+          <div className="coupon-info">
+            <div className="coupon-applied">
+              <div className="coupon-code">{ coupon[0].code }</div>
+              {coupon[0].isValid
+                ? <div className="coupon-validity">&nbsp;was applied successfully!</div>
+                : <div className="coupon-validity">&nbsp;is not a valid coupon ☹</div>
+              }
+            </div>
+            {coupon[0].isValid &&
+              <div className="remove-coupon" onClick={() => removeCoupon()}>remove</div>
+            }
+          </div>
+        }
+      </div>
       <div className="checkout-title">Cart Summary</div>
       <div className="checkout-summary">
         <div className="checkout-subtotal">
           <div className="label">Subotal</div>
           <div className="amount">¥{ cartSubtotal }</div>
+        </div>
+        <div className="checkout-discount">
+          <div className="label">Discount</div>
+          <div className="amount">-¥{ cartDiscount }</div>
         </div>
       </div>
       <div className="separator"></div>
@@ -44,8 +96,16 @@ function Checkout({ cart }) {
 
 const mapStateToProps = (state) => {
   return {
-    cart: state.shop.cart
+    cart: state.shop.cart,
+    coupon: state.shop.coupon
   };
 };
 
-export default connect(mapStateToProps)(Checkout);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    applyCoupon: (code) => dispatch(applyCoupon(code)),
+    removeCoupon: () => dispatch(removeCoupon())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Checkout);

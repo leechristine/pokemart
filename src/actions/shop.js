@@ -33,3 +33,16 @@ export const emptyCart = () => {
     type: shopVars.EMPTY_CART,
   };
 };
+
+export const applyCoupon = (code) => {
+  return {
+    type: shopVars.APPLY_COUPON,
+    code
+  };
+};
+
+export const removeCoupon = () => {
+  return {
+    type: shopVars.REMOVE_COUPON,
+  };
+};

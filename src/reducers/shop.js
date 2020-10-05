@@ -4,6 +4,8 @@ import db from 'db.js';
 const INITIAL_STATE = {
   products: db.products, // [] of {id, title, description, price, image}
   cart: [], // {id, title, description, price, image, quantity}
+  coupons: db.coupons, // [] of {code, description, condition, amount}
+  coupon: [] // {code, description, condition, amount, isValid} && length <= 1
 };
 
 const shopReducer = (state = INITIAL_STATE, action) => {
@@ -60,6 +62,32 @@ const shopReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         cart: [],
+      };
+    case shopVars.APPLY_COUPON:
+      // check if coupon exists
+      const isCoupon = state.coupons.find(item =>
+        item.code === action.code ? true : false
+      );
+      // filter coupon with same code as item
+      const validCoupon = state.coupons.filter((item) => item.code === action.code);
+      return {
+        ...state,
+        coupon: isCoupon
+        ? [{ ...validCoupon[0], isValid: true }]
+        : [{ code: action.code, description: "", condition: 0, amount: 1, isValid: false }],
+        /*
+        ...state,
+        coupon: state.coupons.map((item) =>
+          item.code === action.code
+            ? [{ ...item, isValid: true }]
+            : [{ code: action.code, description: "", condition: 0, amount: 1, isValid: false }]
+        )
+        */
+      };
+    case shopVars.REMOVE_COUPON:
+      return {
+        ...state,
+        coupon: [],
       };
     default:
       return state;

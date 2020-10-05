@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faQuestionCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { applyCoupon, removeCoupon } from 'actions/shop';
+import { Coupons } from 'components';
 import './Checkout.scss';
 
 function Checkout({ cart, coupon, applyCoupon, removeCoupon }) {
   const [cartSubtotal, setCartSubtotal] = useState(0);
   const [cartDiscount, setCartDiscount] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
+  const [showCoupons, setShowCoupons] = useState("invisible");
 
   useEffect(() => {
     let subtotal = 0;
@@ -34,24 +36,39 @@ function Checkout({ cart, coupon, applyCoupon, removeCoupon }) {
 
   let couponInput = React.createRef();
 
-  function handleApplyCoupon(){
+  function handleApplyCoupon() {
     if (couponInput.current.value != "") {
       applyCoupon(couponInput.current.value);
       couponInput.current.value = "";
     }
-  } 
+  }
+
+  function toggleShowCoupons() {
+    if (showCoupons == "invisible") {
+      setShowCoupons("visible");
+    }
+    else {
+      setShowCoupons("invisible");
+    }
+  }
 
   return (
     <div className="checkout-container">
+      <div className={ `coupons-list ${ showCoupons }` }>
+        <Coupons handleHideCoupons={ () => toggleShowCoupons() } />
+      </div>
       <div className="checkout-header">Checkout</div>
       <div className="coupon-container">
-        <div className="coupon-title">Coupon</div>
+        <div className="coupon-title">
+          Coupon
+          <div className="view-coupons" onClick={() => toggleShowCoupons()}>
+            <FontAwesomeIcon icon={ faQuestionCircle } />
+          </div>
+        </div>
         {(coupon.length == 0 || !coupon[0].isValid) &&
         <div className="coupon-input-container">
           <input className="coupon-input" ref={ couponInput } placeholder="" />
-          <div className="apply-coupon" onClick={() => handleApplyCoupon()}>
-            <FontAwesomeIcon icon={ faPlusCircle } />
-          </div>
+          <div className="apply-coupon" onClick={() => handleApplyCoupon()}>add</div>
         </div>
         }
         {coupon.length != 0 &&

@@ -23,10 +23,10 @@
 
   .coupons-list {
     position: absolute;
-    width: 300px;
+    width: 100%;
+    height: 100%;
     top: 0px;
     left: 0px;
-    padding: 25px 25px 0;
     background: $bgr_sec;
 
     &.invisible {

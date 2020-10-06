@@ -1,0 +1,140 @@
+/*
+ * Checkout stylesheet
+ */
+
+// import global styles
+@import 'styles.scss';
+
+.checkout-container {
+  position: relative;
+  margin: 0 20px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-self: flex-end;
+  height: min-content;
+  width: 300px;
+  padding: 25px 25px 30px;
+  background: $bgr_sec;
+  border: 2px solid $txt_sec;
+  border-radius: 5px;
+  box-shadow: 0 0 0 5px $acc_sec;
+  color: $txt_sec;
+  z-index: 1;
+
+  .coupons-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: $bgr_sec;
+
+    &.invisible {
+      display: none;
+    }
+
+    &.visible {
+      display: flex;
+    }
+  }
+
+  .checkout-header {
+    font-size: 13pt;
+    font-weight: 700;
+    margin-bottom: 21px;
+  }
+
+  .coupon-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 21px;
+
+    .coupon-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .view-coupons {
+        margin-left: 5px;
+        cursor: pointer;
+      }
+    }
+
+    .coupon-input-container {
+      display: flex;
+      align-items: center;
+
+      .coupon-input {
+        width: 100%;
+        height: 17px;
+        padding: 3px;
+        background-color: rgba(255, 255, 255, 0.96);
+        border: 2px solid $acc_sec;
+        border-radius: 5px;
+        font-size: 10pt;
+        font-weight: 500;
+        color: $dark-grey;
+        margin-right: 8px;
+        outline: none;
+      }
+
+      .apply-coupon {
+        font-size: 9.5pt;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+
+    .coupon-info {
+      display: flex;
+      padding: 5px 0 2px 3px;
+      flex-direction: column;
+
+      .coupon-applied {
+        display: flex;
+        font-size: 10.5pt;
+
+        .coupon-code {
+          font-weight: 600;
+        }
+      }
+
+      .remove-coupon {
+        font-size: 9.5pt;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .checkout-title {
+    font-size: 12pt;
+    margin-bottom: 10px;
+  }
+
+  .checkout-summary {
+    font-size: 10pt;
+    font-weight: 400;
+
+    .checkout-subtotal, .checkout-discount {
+      display: flex;
+      justify-content: space-between;
+      margin: 1px 0;
+    }
+  }
+
+  .separator {
+    display: flex;
+    align-self: center;
+    width: 100%;
+    margin: 15px 0;
+    height: 2px;
+    background-color: $bdr_sec;
+  }
+
+  .checkout-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12.5pt;
+  }
+}

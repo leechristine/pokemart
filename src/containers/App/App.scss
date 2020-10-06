@@ -1,0 +1,21 @@
+/*
+ * App stylesheet
+ */
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  background-color: #f8fcfb;
+
+  .app-bgr-image {
+    position: fixed;
+    right: 0px;
+    bottom: -240px;
+    width: 750px;
+    opacity: 0.3;
+    z-index: 0;
+  }
+}

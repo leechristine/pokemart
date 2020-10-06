@@ -10,9 +10,9 @@ function App() {
   return (
     <Router history={ history }>
       <div className="app">
-        <div className="app-bgr-image">
+        <span className="app-bgr-image">
           <img src={ pokeball } />
-        </div>
+        </span>
         {/* Navigation bar */}
         <Navbar />
         {/* Routed page */}

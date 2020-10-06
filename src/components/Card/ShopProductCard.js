@@ -21,7 +21,7 @@ function ShopProductCard({ productData, addToCart }) {
           </div>
         </div>
         <div className="product-actions">
-          <div className="add-to-cart" onClick={() => addToCart(productData.id)}>
+          <div className="add-to-cart">
             <FontAwesomeIcon icon={ faCartPlus } />
           </div>
         </div>

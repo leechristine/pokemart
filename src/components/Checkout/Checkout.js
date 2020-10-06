@@ -89,7 +89,7 @@ function Checkout({ cart, coupon, applyCoupon, removeCoupon }) {
       <div className="checkout-title">Cart Summary</div>
       <div className="checkout-summary">
         <div className="checkout-subtotal">
-          <div className="label">Subotal</div>
+          <div className="label">Subtotal</div>
           <div className="amount">¥{ cartSubtotal }</div>
         </div>
         <div className="checkout-discount">

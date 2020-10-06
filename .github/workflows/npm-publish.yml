@@ -30,7 +30,7 @@ jobs:
       - name: Build
       - run: npm run build
 
-      -name: Deploy
+      - name: Deploy
       - run:
           git config --global user.name "Christine Lee"
           git config --global user.email "chrstn.lee@mail.utoronto.ca"

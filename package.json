@@ -1,6 +1,5 @@
 {
-  "homepage": "https://csc301-fall-2020.github.io/assignment-1-17-leechristine-codeturtle00-web",
-  "name": "a1-web",
+  "name": "pokemart",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +9,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3"
+  },
+  "engines": {
+    "node": "14.3"
   },
   "scripts": {
     "predeploy": "npm run build",

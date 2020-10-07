@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a virtual Poké Mart created with React and Node.js.
 
-## Available Scripts
+## Instructions
 
+**View the project here:** [https://pokemart.herokuapp.com/](https://pokemart.herokuapp.com/)<br />
+
+
+Alternatively, to test the project locally:
+
+Clone this repository to your local machine.<br />
 In the project directory, you can run:
 
-### `yarn start`
+### `npm install`
+
+Installs project's dependencies to your local machine.
+
+### `npm run dev`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### `npm test`
 
-### `yarn test`
+Launches the test runner in the interactive watch mode.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Functionality
 
-### `yarn build`
+### add product to cart
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+On launch of the app, the store's products will be displayed.<br />
+To add a product to your cart, simply click on the product you wish to add.<br />
+The number of items currently in your cart is displayed at the top right of the application.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### view cart
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+On navigation to the app's [cart](https://pokemart.herokuapp.com/cart),
+your cart and the checkout view will be displayed.<br />
+You will be able to view all the items in your cart as well as your cart's total.
 
-### `yarn eject`
+### increase/decrease quantity of an item in cart
+The quantity of each item in your cart is displayed next to its respective item.<br />
+To increase or decrease the quantity, click on the icons beside the displayed number:
+**+** to increase and **-** to decrease.<br />
+The quantity of items will update accordingly, as well as the cart total.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### remove item from cart
+To remove an item from your cart, you can choose to either click on the garbage icon
+next to an item or decrease the item's quantity to 0.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### view available coupons
+To view all available coupons, click on the **?** icon next to Coupons in the checkout view.<br />
+When done, click on the arrow to go back.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### add discount to total
+To add a discount to your total, enter a valid coupon into the input box of the checkout view.<br />
+Click **add** to apply the discount and **remove** to remove it.<br />
+Invalid coupons will not be accepted.

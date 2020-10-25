@@ -1,0 +1,26 @@
+Web app (18.5):
+Very large selection of items.
+Can dynamically add/remove items and the number of items are correctly reflected in the shopping cart counter.
+Can apply different coupons.
+Detailed instructions on how to launch the app locally.
+
+
+
+Web report (25.5): 
+Very detailed comparisons for front-end technologies.
+Some comparisons for back-end, database, CI/CD.
+
+Web CI/CD (bonus): 8.5
+
+
+Mobile app (18):
+Simple UI as web app, but with less items available.
+Good instructions on how to launch the app locally.
+
+
+Mobile report (25.5):
+Similar comments as web report.
+
+Mobile  CI/CD (bonus): 7
+
+Total: 100 (grade is capped at 100)
